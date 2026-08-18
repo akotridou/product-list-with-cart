@@ -1,4 +1,4 @@
-let cart = [];
+const cart = [];
 
 fetch("data.json")
   .then((response) => response.json())
@@ -9,7 +9,7 @@ fetch("data.json")
       const article = document.createElement("article");
       const img = document.createElement("img");
       const h2 = document.createElement("h2");
-      const h3 = document.createElement("h3");
+      const h2 = document.createElement("h2");
       const p = document.createElement("p");
       const button = document.createElement("button");
 
@@ -18,6 +18,7 @@ fetch("data.json")
       icon.alt = "";
 
       button.append(icon);
+      button.type = "button";
       button.append("Add to Cart");
 
       img.src = product.image.desktop;
@@ -26,8 +27,8 @@ fetch("data.json")
       article.append(img);
       article.append(button);
 
-      h3.textContent = product.category;
-      article.append(h3);
+      h2.textContent = product.category;
+      article.append(h2);
 
       h2.textContent = product.name;
       article.append(h2);
