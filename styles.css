@@ -101,9 +101,16 @@ p {
   border-radius: 12px;
 }
 
-@media (min-width: 900px) {
+
+@media (min-width: 56.25em) {  /* 900px / 16 = 56.25em */
+  .container {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 56.25em) {
   #cart {
-    width: 380px;
+    width: 380px;  /* Αυτό μπορεί να μείνει σε px (είναι εσωτερικό) */
   }
 }
 
@@ -350,4 +357,11 @@ p {
 
 button img{
   width:30px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
