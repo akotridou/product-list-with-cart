@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Red Hat Text', sans-serif;
+  background-color: hsl(20, 50%, 98%);
+  color: hsl(14, 65%, 9%);
+  padding: 40px 24px;
+}
+
+h1 {
+  margin-bottom: 24px;
+}
+
+/* Κεντρικό Layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+@media (min-width: 900px) {
+  .container {
+    flex-direction: row;
+  }
+}
+
+/* Grid Προϊόντων */
+#products {
+  flex: 1;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+}
+
+article img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+article button {
+  align-self: center;
+  margin-top: -20px;
+  margin-bottom: 14px;
+  padding: 10px 22px;
+  background-color: #ffffff;
+  border: 1px solid hsl(14, 25%, 72%);
+  border-radius: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+article button:hover {
+  border-color: hsl(14, 86%, 42%);
+  color: hsl(14, 86%, 42%);
+}
+
+h3 {
+  color: hsl(14, 25%, 72%);
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+p {
+  color: hsl(14, 86%, 42%);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Sidebar Καλαθιού */
+#cart {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+@media (min-width: 900px) {
+  #cart {
+    width: 380px;
+  }
+}
+
+#cardh2 {
+  color: hsl(14, 86%, 42%);
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 16px 0;
+}
+
+.empty-cart p {
+  color: hsl(12, 20%, 44%);
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+/* Γραμμή Προϊόντος στο Καλάθι */
+.cart-item {
+  border-bottom: 1px solid hsl(13, 31%, 94%);
+  padding: 14px 0;
+  position: relative;
+}
+
+.item-name {
+  color: hsl(14, 65%, 9%);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.item-prices {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.item-qty {
+  color: hsl(14, 86%, 42%);
+  font-weight: 700;
+}
+
+.item-unit {
+  color: hsl(7, 20%, 60%);
+}
+
+.item-total {
+  color: hsl(12, 20%, 44%);
+  font-weight: 600;
+}
+
+.btn-remove {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 1px solid hsl(14, 25%, 72%);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-remove:hover {
+  border-color: hsl(14, 65%, 9%);
+}
+
+/* Order Total & Checkout */
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  margin-bottom: 20px;
+}
+
+.order-total span:first-child {
+  font-size: 14px;
+  color: hsl(14, 65%, 9%);
+}
+
+.total-price-all {
+  font-size: 24px;
+  font-weight: 700;
+  color: hsl(14, 65%, 9%);
+}
+
+.carbon-delivery {
+  background-color: hsl(20, 50%, 98%);
+  padding: 14px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+
+.btn-confirm {
+  width: 100%;
+  background-color: hsl(14, 86%, 42%);
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  border-radius: 24px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-confirm:hover {
+  opacity: 0.9;
+}
+
+/* Order Confirmed Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  padding: 20px;
+}
+
+.modal-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 100%;
+  padding: 32px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-icon {
+  margin-bottom: 16px;
+}
+
+.modal-card h2 {
+  font-size: 28px;
+  margin-bottom: 6px;
+  color: hsl(14, 65%, 9%);
+}
+
+.modal-subtitle {
+  color: hsl(7, 20%, 60%);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.modal-summary-box {
+  background-color: hsl(20, 50%, 98%);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.modal-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid hsl(13, 31%, 94%);
+}
+
+.modal-item-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-item-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+}
+
+.modal-item-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: hsl(14, 65%, 9%);
+  margin-bottom: 4px;
+}
+
+.modal-item-pricing {
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.modal-item-total {
+  font-weight: 600;
+  color: hsl(14, 65%, 9%);
+  font-size: 14px;
+}
+
+.modal-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+}
+
+.modal-total-row span:first-child {
+  font-size: 13px;
+  color: hsl(14, 65%, 9%);
+}
+
+.modal-grand-total {
+  font-size: 22px;
+  font-weight: 700;
+  color: hsl(14, 65%, 9%);
+}
+
+.btn-new-order {
+  width: 100%;
+  background-color: hsl(14, 86%, 42%);
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  border-radius: 24px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button img{
+  width:30px;
+}
