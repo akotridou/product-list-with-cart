@@ -9,7 +9,7 @@ fetch("data.json")
       const article = document.createElement("article");
       const img = document.createElement("img");
       const h2 = document.createElement("h2");
-      const h2 = document.createElement("h2");
+      const h3 = document.createElement("h3");
       const p = document.createElement("p");
       const button = document.createElement("button");
 
@@ -27,8 +27,8 @@ fetch("data.json")
       article.append(img);
       article.append(button);
 
-      h2.textContent = product.category;
-      article.append(h2);
+      h3.textContent = product.category;
+      article.append(h3);
 
       h2.textContent = product.name;
       article.append(h2);
