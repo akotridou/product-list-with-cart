@@ -2,6 +2,9 @@
 
 A responsive product listing page with an interactive shopping cart.
 
+## Live Demo
+View Live Site: (https://akotridou.github.io/product-list-with-cart/)
+
 ## Features
 - Product cards with images and prices
 - Add products to the cart
@@ -13,7 +16,7 @@ A responsive product listing page with an interactive shopping cart.
 ## Built With
 - HTML
 - CSS
-- JavaScript (json)
+- JavaScript 
 
 ## What I Learned
 - DOM manipulation
@@ -21,5 +24,3 @@ A responsive product listing page with an interactive shopping cart.
 - Managing cart state
 - Responsive layouts
 
-## Live Demo
-View Live Site: (https://akotridou.github.io/product-list-with-cart/)
